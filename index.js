@@ -1,7 +1,5 @@
 const fs = require('fs'),
     csv = require("csv-parser");
-
-
 fs.stat('input_countries.csv', function (err) {
     if (err == null) {
         console.log('input_countries.csv File exists');
@@ -26,9 +24,9 @@ fs.stat('input_countries.csv', function (err) {
                     fs.writeFileSync('canada.txt', headers)
                     for (var i = 0; i < arr.length; i++) {
                         fs.writeFileSync('canada.txt', `\n${arr[i].country},${arr[i].year},${arr[i].population}`, { flag: 'a' })
+                        
                     }
                 })
-
                 fs.stat('usa.txt', function (err) {
                     if (err == null) {
                         console.log('usa.txt file exists');
